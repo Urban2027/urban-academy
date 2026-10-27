@@ -50,17 +50,23 @@
       <div class="text-center max-w-3xl mx-auto">
         <span class="inline-block px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20 text-xs uppercase font-bold">Campus Virtual</span>
         <h1 class="mt-4 text-3xl sm:text-5xl font-black">Catálogo de Cursos & Certificación</h1>
-        <p class="mt-3 text-slate-400 text-sm sm:text-base">Seleccioná tu formación, leé el contenido obligatorio y rendí la evaluación para emitir tu certificado oficial.</p>
+        <p class="mt-3 text-slate-400 text-sm sm:text-base">Seleccioná tu formación, leé el contenido obligatorio, descargá el PDF y rendí la evaluación para emitir tu certificado oficial.</p>
       </div>
 
       <div id="catalog-grid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-6"></div>
     </section>
 
     <section id="sec-lesson" class="hidden max-w-4xl mx-auto space-y-6">
-      <button onclick="showSection('catalog')" class="flex items-center gap-2 text-slate-400 hover:text-white">
-        <i data-lucide="chevron-left" class="w-4 h-4"></i>
-        <span>Volver</span>
-      </button>
+      <div class="flex justify-between items-center">
+        <button onclick="showSection('catalog')" class="flex items-center gap-2 text-slate-400 hover:text-white">
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          <span>Volver</span>
+        </button>
+        <!-- Botón para descargar el PDF de estudio -->
+        <a id="btn-download-pdf" href="#" target="_blank" class="hidden items-center gap-2 bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-700 px-4 py-2 rounded-xl text-sm font-semibold transition">
+          <i data-lucide="download" class="w-4 h-4"></i> Descargar Material en PDF
+        </a>
+      </div>
 
       <div class="glass rounded-2xl p-6 sm:p-8">
         <span id="lesson-category" class="text-xs uppercase tracking-wider text-purple-300 font-bold"></span>
@@ -191,6 +197,7 @@
         title: 'Reparación de Aire Acondicionado',
         category: 'Técnica & Refrigeración',
         description: 'Capacitación intensiva en tecnología Split e Inverter, métodos de detección de fugas, vacío y recarga de refrigerantes.',
+        pdfUrl: 'pdf-aires-fallas.pdf',
         lesson: [
           {
             title: '1. Principios de Refrigeración y Ciclo de Gas',
@@ -217,6 +224,7 @@
         title: 'Reparación de Lavarropas Automáticos',
         category: 'Electrodomésticos',
         description: 'Mecánica integral, cambio de rodamientos, bombas de desagote, electroválvulas y diagnóstico de placas electrónicas.',
+        pdfUrl: 'pdf-lavarropas.pdf',
         lesson: [
           {
             title: '1. Sistema de Admisión y Desagote',
@@ -237,6 +245,87 @@
           { question: '¿Qué elemento de seguridad impide el arranque si la escotilla está abierta?', options: ['Trabapuertas / microretardo', 'Termostato', 'Sensor de humedad'], answer: 0 },
           { question: '¿Qué función cumple el tacómetro del motor?', options: ['Medir velocidad de rotación', 'Controlar el llenado', 'Apagar la luz'], answer: 0 },
           { question: '¿Por qué se reemplaza el retén junto con los rodamientos?', options: ['Para evitar que el agua pase y destruya el nuevo rodamiento', 'Porque es opcional', 'Para mejorar la temperatura'], answer: 0 }
+        ]
+      },
+      heladeras: {
+        title: 'Reparación de Heladeras & Freezers',
+        category: 'Técnica & Refrigeración',
+        description: 'Sistemas No Frost, detección de obstrucciones en capilares, control de deshielo y cambio de motocompresores.',
+        pdfUrl: 'pdf-heladeras.pdf',
+        lesson: [
+          {
+            title: '1. Sistema No Frost y Deshielo',
+            content: 'El sistema No Frost evita la acumulación de hielo mediante un timer o placa que activa la resistencia de deshielo periódicamente, controlada por un bimetal y un fusible térmico.'
+          },
+          {
+            title: '2. Diagnóstico de Bloqueo por Hielo',
+            content: 'Si el evaporador se llena de hielo y no enfría abajo, el problema suele estar en el sistema de defrost (bimetal abierto, resistencia cortada o fusible térmico quemado).'
+          },
+          {
+            title: '3. Carga y Soldadura en Frío',
+            content: 'Para reparar una pinchadura o fuga en gabinete, se presuriza, se repara con plata-fósforo, se realiza vacío profundo y se carga el gas exacto por balanza.'
+          }
+        ],
+        questions: [
+          { question: '¿Qué componente corta la alimentación de la resistencia cuando sube la temperatura en defrost?', options: ['Bimetal o fusible térmico', 'El compresor', 'El ventilador'], answer: 0 },
+          { question: '¿Cuál es el síntoma típico de un sistema No Frost con falla de deshielo?', options: ['Evaporador bloqueado de hielo y falta de frío en refrigerador', 'Exceso de frío en todo el gabinete', 'El motor no corta nunca por temperatura ambiente'], answer: 0 },
+          { question: '¿Cómo se debe medir la cantidad exacta de gas refrigerante en una heladera?', options: ['Por peso exacto utilizando balanza digital', 'Por presión a ojo', 'Llenando hasta que el caño de baja esté muy frío'], answer: 0 },
+          { question: '¿Qué función cumple el filtro deshidratador (tamiz)?', options: ['Retener humedad e impurezas del circuito', 'Aumentar la presión del gas', 'Enfriar el aceite'], answer: 0 },
+          { question: '¿Qué gas se utiliza comúnmente en heladeras domésticas modernas actuales?', options: ['R600a (isobutano)', 'R22', 'Oxígeno puro'], answer: 0 }
+        ]
+      },
+      consorcios: {
+        title: 'Administración de Consorcios',
+        category: 'Gestión & Propiedad Horizontal',
+        description: 'Marco legal (Código Civil y Comercial), liquidación de expensas, liquidación de sueldos de encargados y gestión de mantenimiento.',
+        pdfUrl: 'pdf-administracion-consorcios.pdf',
+        lesson: [
+          {
+            title: '1. Marco Legal y Reglamento de Copropiedad',
+            content: 'El Administrador es representante legal del consorcio. Sus facultades y obligaciones surgen del Código Civil y Comercial y del Reglamento de Copropiedad y Administración.'
+          },
+          {
+            title: '2. Liquidación de Expensas',
+            content: 'Las expensas se dividen en ordinarias (gastos habituales de mantenimiento y sueldos) y extraordinarias (reparaciones mayores o mejoras decididas en asamblea).'
+          },
+          {
+            title: '3. Gestión de Personal (Encargados de Edificio)',
+            content: 'La relación laboral se rige por el Convenio Colectivo de Trabajo de SUTERH, contemplando cargas sociales, francos, horas extra y obligaciones de seguridad e higiene.'
+          }
+        ],
+        questions: [
+          { question: '¿Quiénes deben aprobar las expensas extraordinarias o grandes obras?', options: ['La Asamblea de Propietarios', 'El Administrador en solitario', 'El municipio local'], answer: 0 },
+          { question: '¿Qué tipo de gasto corresponde al sueldo mensual del encargado?', options: ['Gasto Ordinario', 'Gasto Extraordinario', 'Gasto Personal del Administrador'], answer: 0 },
+          { question: '¿Cuál es el rol principal del administrador según la ley?', options: ['Representante legal y ejecutor de las decisiones del consorcio', 'Dueño absoluto de las áreas comunes', 'Inspector de obras públicas'], answer: 0 },
+          { question: '¿Qué documento establece los porcentuales de pago (prorrateo) de cada unidad?', options: ['El Reglamento de Copropiedad', 'El libro de quejas', 'El recibo de expensas anterior'], answer: 0 },
+          { question: '¿Qué convenio rige por lo general la actividad laboral de los encargados en Argentina?', options: ['SUTERH', 'UOCRA', 'COMERCIO'], answer: 0 }
+        ]
+      },
+      estetica: {
+        title: 'Estética Profesional & Uñas',
+        category: 'Belleza & Cuidado Integral',
+        description: 'Técnicas avanzadas de esculpido en acrílico/gel, bioseguridad, esterilización de herramientas y marketing para gabinetes.',
+        pdfUrl: 'pdf-estetica-unas.pdf',
+        lesson: [
+          {
+            title: '1. Bioseguridad y Desinfección en Gabinete',
+            content: 'La limpieza, desinfección con amonio cuaternario y esterilización en autoclave de limas, alicates y herramientas metálicas es obligatoria para prevenir contagios de micosis u otras patologías.'
+          },
+          {
+            title: '2. Preparación de la Uña Natural',
+            content: 'Un correcto desarme de cutícula, nivelación de PH y deshidratación de la lámina ungueal evita desprendimientos prematuros del esmaltado semipermanente o esculpido.'
+          },
+          {
+            title: '3. Estructura y Química de Productos',
+            content: 'Los geles y acrílicos requieren correcta polimerización mediante lámparas UV/LED con la potencia adecuada para evitar reacciones alérgicas o queratólisis.'
+          }
+        ],
+        questions: [
+          { question: '¿Qué método es el más seguro para esterilizar herramientas metálicas reutilizables?', options: ['Autoclave / calor seco', 'Alcohol en spray únicamente', 'Agua hirviendo 2 minutos'], answer: 0 },
+          { question: '¿Cuál es la función del deshidratador (primer) en la uña natural?', options: ['Eliminar la grasitud y humedad superficial para asegurar adherencia', 'Dar brillo final', 'Acelerar el crecimiento'], answer: 0 },
+          { question: '¿Qué problema puede causar una mala polimerización (curado) en lámpara?', options: ['Alergias de contacto y dermatitis por monómeros sin reaccionar', 'Mayor duración del servicio', 'Endurecimiento instantáneo perfecto'], answer: 0 },
+          { question: '¿Cómo se debe retirar correctamente el esmaltado semipermanente?', options: ['Lijado suave y remoción con ablandador/acetona sin forzar la placa', 'Arrancándolo con fuerza desde la cutícula', 'Con agua caliente y jabón'], answer: 0 },
+          { question: '¿Qué elemento de protección visual y respiratorio es clave al limar acrílico?', options: ['Barbijo y antiparras contra polvillo acrílico', 'Ninguno', 'Guantes de látex únicamente'], answer: 0 }
         ]
       }
     };
@@ -297,7 +386,20 @@
       `).join('');
 
       document.getElementById('lesson-content').innerHTML = lessonHtml;
+
+      // Configurar y mostrar el botón de descarga del PDF
+      const btnPdf = document.getElementById('btn-download-pdf');
+      if (curso.pdfUrl) {
+        btnPdf.href = curso.pdfUrl;
+        btnPdf.classList.remove('hidden');
+        btnPdf.classList.add('inline-flex');
+      } else {
+        btnPdf.classList.add('hidden');
+        btnPdf.classList.remove('inline-flex');
+      }
+
       showSection('lesson');
+      lucide.createIcons();
     }
 
     function startQuiz() {
