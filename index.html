@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+ 
+  <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -46,7 +48,7 @@
         <p class="text-gray-400 text-sm mb-6">Aprende diagnóstico, detección de fallas y reparación de Aires Acondicionados, Heladeras, Freezers y Lavarropas Automáticos con guías ilustradas de taller.</p>
         
         <ul class="space-y-2 text-sm text-gray-300 mb-6">
-          <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Incluye Pack Técnico Completo en `.zip`</li>
+          <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Acceso a manuales técnicos en Google Drive</li>
           <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Protocolos de detección de fallas y esquemas eléctricos</li>
           <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Examen integrador online (80% requerido para aprobar)</li>
           <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Emisión inmediata de Certificado Digital de Finalización</li>
@@ -56,11 +58,11 @@
       <div class="p-6 bg-gray-800/80 border-t border-gray-700 space-y-3">
         <!-- BOTÓN DE PAGO MP -->
         <a href="https://mpago.la/LINK_PACK_TECNICO" target="_blank" class="block w-full bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-center py-3 rounded-xl transition shadow-lg shadow-emerald-500/20">
-          <i class="fas fa-shopping-cart mr-2"></i> Inscribirme Ahora / Comprar
+          <i class="fas fa-shopping-cart mr-2"></i> Inscribirme Ahora / Comprar ($35.000)
         </a>
-        <button onclick="abrirModuloDescarga('pack-tecnico')" class="block w-full bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold text-center py-2.5 rounded-xl transition text-sm">
-          <i class="fas fa-download mr-2"></i> Descargar Material Técnico (`.zip`)
-        </button>
+        <a href="https://drive.google.com/drive/folders/1ZTEAJO0KUv50pc4gAwwI4nlQUS_b-Iyc?usp=sharing" target="_blank" class="block w-full bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold text-center py-2.5 rounded-xl transition text-sm">
+          <i class="fas fa-download mr-2"></i> Descargar Material Técnico (Google Drive)
+        </a>
         <button onclick="iniciarExamen('pack-tecnico')" class="block w-full bg-emerald-950/50 hover:bg-emerald-900/50 text-emerald-300 border border-emerald-500/30 font-semibold text-center py-2.5 rounded-xl transition text-sm">
           <i class="fas fa-file-signature mr-2"></i> Rendir Examen y Generar Certificado
         </button>
@@ -78,7 +80,7 @@
         <p class="text-gray-400 text-sm mb-6">Formación integral en gestión legal, liquidación de expensas, mantenimiento de instalaciones edilicias, asambleas y normativa vigente.</p>
         
         <ul class="space-y-2 text-sm text-gray-300 mb-6">
-          <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Material completo en `.zip` (`ADMINISTRACION DE CONSORCIO URBAN.zip`)</li>
+          <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Acceso a carpetas de gestión y normativa en Google Drive</li>
           <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Modelos de liquidación y gestión de proveedores/mantenimiento</li>
           <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Examen de evaluación final con corrección automática</li>
           <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Certificación de Aprobación expedida por Urban Academy</li>
@@ -88,11 +90,11 @@
       <div class="p-6 bg-gray-800/80 border-t border-gray-700 space-y-3">
         <!-- BOTÓN DE PAGO MP -->
         <a href="https://mpago.la/LINK_CONSORCIOS" target="_blank" class="block w-full bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-center py-3 rounded-xl transition shadow-lg shadow-emerald-500/20">
-          <i class="fas fa-shopping-cart mr-2"></i> Inscribirme Ahora / Comprar
+          <i class="fas fa-shopping-cart mr-2"></i> Inscribirme Ahora / Comprar ($25.000)
         </a>
-        <button onclick="abrirModuloDescarga('consorcios')" class="block w-full bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold text-center py-2.5 rounded-xl transition text-sm">
-          <i class="fas fa-download mr-2"></i> Descargar Material Consorcios (`.zip`)
-        </button>
+        <a href="https://drive.google.com/drive/folders/1gLdtyIWhN_ykgQQhX2TUSnqndhxpPdwf?usp=sharing" target="_blank" class="block w-full bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold text-center py-2.5 rounded-xl transition text-sm">
+          <i class="fas fa-download mr-2"></i> Descargar Material Consorcios (Google Drive)
+        </a>
         <button onclick="iniciarExamen('consorcios')" class="block w-full bg-emerald-950/50 hover:bg-emerald-900/50 text-emerald-300 border border-emerald-500/30 font-semibold text-center py-2.5 rounded-xl transition text-sm">
           <i class="fas fa-file-signature mr-2"></i> Rendir Examen y Generar Certificado
         </button>
@@ -167,14 +169,6 @@
         ]
       }
     };
-
-    function abrirModuloDescarga(curso) {
-      if(curso === 'pack-tecnico') {
-        window.open('Curso tecnico.zip', '_blank');
-      } else {
-        window.open('ADMINISTRACION DE CONSORCIO URBAN.zip', '_blank');
-      }
-    }
 
     function iniciarExamen(curso) {
       cursoActual = curso;
@@ -320,4 +314,4 @@
     }
   </script>
 </body>
-</html>
+</html>        
