@@ -1,6 +1,4 @@
-
- 
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -30,9 +28,22 @@
     <div class="max-w-4xl mx-auto">
       <span class="bg-emerald-500/10 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-500/20">Plataforma Educativa Digital</span>
       <h1 class="text-4xl md:text-5xl font-extrabold text-white mt-4 mb-4">Aprende un Oficio Rentable y Obtén tu Certificación Oficial</h1>
-      <p class="text-lg text-gray-400 max-w-2xl mx-auto">Accede a material técnico especializado, rinde el examen interactivo de validación y descarga tu certificado profesional de manera inmediata.</p>
+      <p class="text-lg text-gray-400 max-w-2xl mx-auto">Realiza el pago correspondiente a través de Mercado Pago para acceder inmediatamente al material de estudio en Google Drive, rendir el examen y emitir tu certificado digital.</p>
     </div>
   </section>
+
+  <!-- BANNER ALUMNO CON CONFIRMACIÓN DE PAGO -->
+  <div id="bannerAccesoAprobado" class="hidden max-w-7xl mx-auto px-4 mt-6">
+    <div class="bg-emerald-500/10 border border-emerald-500/40 text-emerald-300 p-4 rounded-xl flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <i class="fas fa-check-circle text-2xl text-emerald-400"></i>
+        <div>
+          <p class="font-bold">¡Pago confirmado e inscripción activa!</p>
+          <p class="text-xs text-emerald-400/80">Ya puedes descargar tus materiales de estudio y rendir las evaluaciones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- CATÁLOGO DE CURSOS -->
   <main class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-8 w-full">
@@ -48,24 +59,28 @@
         <p class="text-gray-400 text-sm mb-6">Aprende diagnóstico, detección de fallas y reparación de Aires Acondicionados, Heladeras, Freezers y Lavarropas Automáticos con guías ilustradas de taller.</p>
         
         <ul class="space-y-2 text-sm text-gray-300 mb-6">
-          <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Acceso a manuales técnicos en Google Drive</li>
+          <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Acceso inmediato a material exclusivo en Google Drive</li>
           <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Protocolos de detección de fallas y esquemas eléctricos</li>
-          <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Examen integrador online (80% requerido para aprobar)</li>
-          <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Emisión inmediata de Certificado Digital de Finalización</li>
+          <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Examen riguroso de 10 preguntas (80% requerido)</li>
+          <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Emisión de Certificado Digital con firma institucional</li>
         </ul>
       </div>
 
       <div class="p-6 bg-gray-800/80 border-t border-gray-700 space-y-3">
         <!-- BOTÓN DE PAGO MP -->
-        <a href="https://mpago.la/LINK_PACK_TECNICO" target="_blank" class="block w-full bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-center py-3 rounded-xl transition shadow-lg shadow-emerald-500/20">
-          <i class="fas fa-shopping-cart mr-2"></i> Inscribirme Ahora / Comprar ($35.000)
+        <a href="https://mpago.la/2KHewv4" target="_blank" class="block w-full bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-center py-3 rounded-xl transition shadow-lg shadow-emerald-500/20">
+          <i class="fas fa-credit-card mr-2"></i> Pagar Pack Técnico ($35.000 ARS)
         </a>
-        <a href="https://drive.google.com/drive/folders/1ZTEAJO0KUv50pc4gAwwI4nlQUS_b-Iyc?usp=sharing" target="_blank" class="block w-full bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold text-center py-2.5 rounded-xl transition text-sm">
-          <i class="fas fa-download mr-2"></i> Descargar Material Técnico (Google Drive)
-        </a>
-        <button onclick="iniciarExamen('pack-tecnico')" class="block w-full bg-emerald-950/50 hover:bg-emerald-900/50 text-emerald-300 border border-emerald-500/30 font-semibold text-center py-2.5 rounded-xl transition text-sm">
-          <i class="fas fa-file-signature mr-2"></i> Rendir Examen y Generar Certificado
-        </button>
+
+        <!-- BOTONES BLOQUEADOS HASTA PAGO -->
+        <div class="bloqueo-post-pago space-y-3">
+          <a href="https://drive.google.com/drive/folders/1ZTEAJO0KUv50pc4gAwwI4nlQUS_b-Iyc?usp=sharing" target="_blank" class="btn-descarga block w-full bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold text-center py-2.5 rounded-xl transition text-sm opacity-50 pointer-events-none">
+            <i class="fas fa-lock mr-2 icono-candado"></i> <span class="texto-btn-descarga">Descarga bloqueada (Paga para habilitar)</span>
+          </a>
+          <button onclick="iniciarExamen('pack-tecnico')" class="btn-examen w-full bg-emerald-950/50 text-emerald-300 border border-emerald-500/30 font-semibold text-center py-2.5 rounded-xl transition text-sm opacity-50 cursor-not-allowed" disabled>
+            <i class="fas fa-file-signature mr-2"></i> Rendir Examen y Generar Certificado
+          </button>
+        </div>
       </div>
     </div>
 
@@ -82,22 +97,26 @@
         <ul class="space-y-2 text-sm text-gray-300 mb-6">
           <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Acceso a carpetas de gestión y normativa en Google Drive</li>
           <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Modelos de liquidación y gestión de proveedores/mantenimiento</li>
-          <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Examen de evaluación final con corrección automática</li>
+          <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Examen de evaluación final de 10 preguntas</li>
           <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i> Certificación de Aprobación expedida por Urban Academy</li>
         </ul>
       </div>
 
       <div class="p-6 bg-gray-800/80 border-t border-gray-700 space-y-3">
         <!-- BOTÓN DE PAGO MP -->
-        <a href="https://mpago.la/LINK_CONSORCIOS" target="_blank" class="block w-full bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-center py-3 rounded-xl transition shadow-lg shadow-emerald-500/20">
-          <i class="fas fa-shopping-cart mr-2"></i> Inscribirme Ahora / Comprar ($25.000)
+        <a href="https://mpago.la/2Ng7XpN" target="_blank" class="block w-full bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-center py-3 rounded-xl transition shadow-lg shadow-emerald-500/20">
+          <i class="fas fa-credit-card mr-2"></i> Pagar Curso Consorcios ($25.000 ARS)
         </a>
-        <a href="https://drive.google.com/drive/folders/1gLdtyIWhN_ykgQQhX2TUSnqndhxpPdwf?usp=sharing" target="_blank" class="block w-full bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold text-center py-2.5 rounded-xl transition text-sm">
-          <i class="fas fa-download mr-2"></i> Descargar Material Consorcios (Google Drive)
-        </a>
-        <button onclick="iniciarExamen('consorcios')" class="block w-full bg-emerald-950/50 hover:bg-emerald-900/50 text-emerald-300 border border-emerald-500/30 font-semibold text-center py-2.5 rounded-xl transition text-sm">
-          <i class="fas fa-file-signature mr-2"></i> Rendir Examen y Generar Certificado
-        </button>
+
+        <!-- BOTONES BLOQUEADOS HASTA PAGO -->
+        <div class="bloqueo-post-pago space-y-3">
+          <a href="https://drive.google.com/drive/folders/1gLdtyIWhN_ykgQQhX2TUSnqndhxpPdwf?usp=sharing" target="_blank" class="btn-descarga block w-full bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold text-center py-2.5 rounded-xl transition text-sm opacity-50 pointer-events-none">
+            <i class="fas fa-lock mr-2 icono-candado"></i> <span class="texto-btn-descarga">Descarga bloqueada (Paga para habilitar)</span>
+          </a>
+          <button onclick="iniciarExamen('consorcios')" class="btn-examen w-full bg-emerald-950/50 text-emerald-300 border border-emerald-500/30 font-semibold text-center py-2.5 rounded-xl transition text-sm opacity-50 cursor-not-allowed" disabled>
+            <i class="fas fa-file-signature mr-2"></i> Rendir Examen y Generar Certificado
+          </button>
+        </div>
       </div>
     </div>
 
@@ -120,7 +139,7 @@
       </div>
 
       <div id="bloquePreguntas" class="hidden space-y-6">
-        <div id="contenedorPreguntas"></div>
+        <div id="contenedorPreguntas" class="space-y-6"></div>
         <button onclick="evaluarExamen()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold py-3 rounded-lg transition">
           Enviar Respuestas y Calificar
         </button>
@@ -149,26 +168,59 @@
 
     const examenesData = {
       'pack-tecnico': {
-        titulo: "Examen Integrador: Reparación de Climatización y Línea Blanca",
+        titulo: "Examen Integrador de 10 Preguntas: Climatización y Línea Blanca",
         preguntas: [
-          { p: "¿Cuál es la causa habitual de la formación de hielo en la tubería de retorno de un aire acondicionado?", opciones: ["Falta de refrigerante o filtro sucio", "Exceso de tensión eléctrica", "Filtro de aire limpio"], correcta: 0 },
-          { p: "¿Qué componente de un lavarropas automático se encarga de expulsar el agua al finalizar el ciclo?", opciones: ["Presostato", "Bomba de desagote", "Electroválvula"], correcta: 1 },
-          { p: "¿Qué función cumple el termostato en un sistema de refrigeración / heladera?", opciones: ["Regular la temperatura cortando el compresor", "Aumentar la presión de gas", "Limpia el condensador"], correcta: 0 },
-          { p: "Si un compresor de heladera no arranca y produce un chasquido continuo, ¿qué elemento debe revisarse primero?", opciones: ["Relé de arranque / Protector térmico", "El evaporador", "El filtro secador"], correcta: 0 },
-          { p: "¿Qué herramienta es indispensable para medir continuidad y tensión eléctrica en fallas de equipos?", opciones: ["Manómetro de gas", "Multímetro / Tester", "Pinza selladora"], correcta: 1 }
+          { p: "¿Cuál es la causa habitual de la formación de hielo en la tubería de retorno de un aire acondicionado?", opciones: ["Falta de refrigerante o filtro sucio", "Exceso de tensión eléctrica", "Filtro de aire completamente limpio"], correcta: 0 },
+          { p: "¿Qué componente de un lavarropas automático se encarga de expulsar el agua al finalizar el ciclo de lavado?", opciones: ["Presostato", "Bomba de desagote", "Electroválvula de entrada"], correcta: 1 },
+          { p: "¿Qué función cumple principalmente el termostato en un sistema de refrigeración / heladera?", opciones: ["Regular la temperatura cortando y conectando el compresor", "Aumentar la presión del gas refrigerante", "Limpiar el condensador"], correcta: 0 },
+          { p: "Si un compresor de heladera no arranca y produce un chasquido continuo en el relé, ¿qué elemento debe revisarse primero?", opciones: ["El protector térmico y relé de arranque", "El evaporador interior", "El filtro secador"], correcta: 0 },
+          { p: "¿Qué herramienta es indispensable para medir continuidad, resistencia y tensión eléctrica en fallas de equipos?", opciones: ["Manómetro de alta presión", "Multímetro / Tester digital", "Pinza para sellar caños"], correcta: 1 },
+          { p: "¿Qué indica la presencia de aceite en las uniones de cañerías de un circuito frigorífico?", opciones: ["Una posible fuga de gas refrigerante", "Exceso de lubricación de fábrica", "Temperatura normal de trabajo"], correcta: 0 },
+          { p: "¿Cuál es la función principal del presostato en un lavarropas automático?", opciones: ["Controlar el nivel de agua dentro del tambor", "Regular la temperatura del agua", "Bloquear la puerta por seguridad"], correcta: 0 },
+          { p: "En un aire acondicionado Split, ¿qué modo de operación invierte el ciclo para calefaccionar el ambiente?", opciones: ["Modo Frío", "Modo Deshumidificación", "Modo Calor (Bomba de calor)"], correcta: 2 },
+          { p: "¿Qué gas refrigerante ecológico se utiliza ampliamente en refrigeración doméstica moderna (ej. R600a)?", opciones: ["R12 tradicional", "Gas Isobutano (R600a)", "Amoníaco puro"], correcta: 1 },
+          { p: "¿Por qué es obligatorio realizar vacío en el sistema antes de liberar el gas en una instalación de aire acondicionado?", opciones: ["Para eliminar humedad y aire del circuito", "Para enfriar el compresor más rápido", "Para aumentar la presión de trabajo"], correcta: 0 }
         ]
       },
       'consorcios': {
-        titulo: "Examen de Evaluación: Administración de Consorcios",
+        titulo: "Examen de Evaluación de 10 Preguntas: Administración de Consorcios",
         preguntas: [
-          { p: "¿Cuál es el órgano supremo de decisión en un consorcio de propiedad horizontal?", opciones: ["La Asamblea de Propietarios", "El Administrador", "El Consejo de Propietarios"], correcta: 0 },
-          { p: "¿Qué documento rige los derechos, obligaciones y porcentuales de copropiedad en un edificio?", opciones: ["El Reglamento de Propiedad Horizontal", "El libro de actas", "La factura de expensas"], correcta: 0 },
-          { p: "¿Qué tipo de expensas cubren los gastos habituales de mantenimiento y servicios comunitarios?", opciones: ["Expensas Ordinarias", "Expensas Extraordinarias", "Fondo de reserva especial"], correcta: 0 },
-          { p: "¿Quién es el representante legal del consorcio frente a terceros y organismos oficiales?", opciones: ["El Administrador del Consorcio", "El Encargado del edificio", "El Presidente de la asamblea"], correcta: 0 },
-          { p: "¿Qué obligación legal debe mantenerse vigente respecto a las instalaciones comunes (ascensores, incendios)?", opciones: ["Mantenimiento periódico y libros de inspección obligatorios", "Cambio anual de tableros", "Pintura exterior cada 6 meses"], correcta: 0 }
+          { p: "¿Cuál es el órgano supremo de decisión y gobierno en un consorcio de propiedad horizontal?", opciones: ["La Asamblea de Propietarios", "El Administrador del edificio", "El Consejo de Propietarios"], correcta: 0 },
+          { p: "¿Qué documento legal rige los derechos, obligaciones y porcentuales de copropiedad de cada unidad?", opciones: ["El Reglamento de Propiedad Horizontal", "El libro de actas de asamblea", "La liquidación mensual de expensas"], correcta: 0 },
+          { p: "¿Qué tipo de expensas cubren los gastos habituales de mantenimiento, sueldos y servicios comunitarios?", opciones: ["Expensas Ordinarias", "Expensas Extraordinarias", "Fondo de reserva especial"], correcta: 0 },
+          { p: "¿Quién es el representante legal del consorcio frente a terceros, proveedores y organismos oficiales?", opciones: ["El Administrador del Consorcio", "El Encargado del edificio", "El Presidente de la asamblea"], correcta: 0 },
+          { p: "¿Qué obligación legal debe mantenerse vigente respecto a las instalaciones de riesgo (ascensores, hidrantes, calderas)?", opciones: ["Mantenimiento periódico por empresas habilitadas y libros de inspección", "Cambio anual obligatorio de tableros eléctricos", "Pintura exterior del edificio cada 6 meses"], correcta: 0 },
+          { p: "¿Cómo se aprueban generalmente las decisiones de obras extraordinarias de alto costo en una asamblea?", opciones: ["Por la mayoría establecida en el Reglamento de Propiedad Horizontal", "Por decisión unilateral del administrador", "Por votación exclusiva del personal de limpieza"], correcta: 0 },
+          { p: "¿Qué destino tienen los fondos recaudados en concepto de 'Fondo de Reserva'?", opciones: ["Afrontar imprevistos o reparaciones mayores no habituales en el edificio", "Pagar el sueldo mensual corriente del encargado", "Comprar insumos de limpieza diarios"], correcta: 0 },
+          { p: "¿Quiénes integran el Consejo de Propietarios y cuál es su rol principal?", opciones: ["Propietarios que colaboran y controlan la gestión contable del administrador", "Abogados externos contratados por el municipio", "Inquilinos encargados de la seguridad nocturna"], correcta: 0 },
+          { p: "¿Qué debe hacer el administrador ante la falta de pago reiterada de expensas de una unidad funcional?", opciones: ["Iniciar la gestión de reclamo judicial / ejecución de expensas", "Cortar el suministro de gas por cuenta propia", "Cambiar la cerradura de la puerta de entrada del departamento"], correcta: 0 },
+          { p: "¿Dónde deben asentarse obligatoriamente las decisiones tomadas en cada reunión de asamblea?", opciones: ["En el Libro de Actas de Asamblea rubricado", "En un grupo de WhatsApp del edificio", "En una hoja suelta firmada por el encargado"], correcta: 0 }
         ]
       }
     };
+
+    // CONTROL AUTOMÁTICO DE ACCESO TRAS EL PAGO DE MERCADO PAGO
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const pagoAprobado = urlParams.get('acceso') === 'aprobado' || urlParams.get('status') === 'approved';
+
+      if (pagoAprobado) {
+        document.getElementById('bannerAccesoAprobado').classList.remove('hidden');
+
+        // Habilitar Botones de Descarga
+        document.querySelectorAll('.btn-descarga').forEach(btn => {
+          btn.classList.remove('opacity-50', 'pointer-events-none');
+          btn.querySelector('.icono-candado').className = 'fas fa-download mr-2 text-emerald-400';
+          btn.querySelector('.texto-btn-descarga').innerText = 'Descargar Material Completo (Google Drive)';
+        });
+
+        // Habilitar Botones de Examen
+        document.querySelectorAll('.btn-examen').forEach(btn => {
+          btn.classList.remove('opacity-50', 'cursor-not-allowed');
+          btn.removeAttribute('disabled');
+        });
+      }
+    });
 
     function iniciarExamen(curso) {
       cursoActual = curso;
@@ -229,19 +281,19 @@
         }
       });
 
-      const porcentaje = (aciertos / preguntas.length) * 100;
+      const porcentaje = Math.round((aciertos / preguntas.length) * 100);
       document.getElementById('bloquePreguntas').classList.add('hidden');
       document.getElementById('resultadoExamen').classList.remove('hidden');
 
       if(porcentaje >= 80) {
         document.getElementById('iconoResultado').innerHTML = `<i class="fas fa-check-circle text-5xl text-emerald-400"></i>`;
         document.getElementById('textoResultado').innerText = `¡Felicidades, ${alumnoNombre}! Examen Aprobado (${porcentaje}%)`;
-        document.getElementById('subtextoResultado').innerText = "Has demostrado los conocimientos requeridos. Puedes descargar tu certificado oficial a continuación.";
+        document.getElementById('subtextoResultado').innerText = "Has superado el exigente estándar de evaluación. Ya puedes descargar tu certificado oficial.";
         document.getElementById('btnDescargarCertificado').classList.remove('hidden');
       } else {
         document.getElementById('iconoResultado').innerHTML = `<i class="fas fa-times-circle text-5xl text-red-500"></i>`;
         document.getElementById('textoResultado').innerText = `Calificación: ${porcentaje}% - Examen No Aprobado`;
-        document.getElementById('subtextoResultado').innerText = "Se requiere un mínimo de 80% para la certificación. Puedes repasar el material y volver a intentarlo.";
+        document.getElementById('subtextoResultado').innerText = "Se requiere un mínimo de 80% de aciertos para la certificación. Repasa el material en Google Drive y vuelve a intentar.";
         document.getElementById('btnDescargarCertificado').classList.add('hidden');
       }
     }
@@ -250,7 +302,7 @@
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
 
-      // Fondo y Marco
+      // Fondo y Marco institucional
       doc.setFillColor(15, 23, 42);
       doc.rect(0, 0, 297, 210, 'F');
       
@@ -275,7 +327,7 @@
       doc.setTextColor(148, 163, 184);
       doc.setFontSize(12);
       doc.setFont("helvetica", "normal");
-      doc.text("Se otorga la presente certificación a:", 148.5, 80, { align: "center" });
+      doc.text("Se otorga la presente certificación institucional a:", 148.5, 80, { align: "center" });
 
       // Alumno
       doc.setTextColor(255, 255, 255);
@@ -287,10 +339,10 @@
       doc.setTextColor(148, 163, 184);
       doc.setFontSize(12);
       doc.setFont("helvetica", "normal");
-      doc.text("Por haber completado satisfactoriamente la evaluación teórica y práctica del curso:", 148.5, 115, { align: "center" });
+      doc.text("Por haber completado satisfactoriamente la evaluación teórica y técnica del curso:", 148.5, 115, { align: "center" });
 
       doc.setTextColor(16, 185, 129);
-      doc.setFontSize(18);
+      doc.setFontSize(17);
       doc.setFont("helvetica", "bold");
       const nombreCursoPDF = cursoActual === 'pack-tecnico' 
         ? "TÉCNICO EN REPARACIÓN DE CLIMATIZACIÓN Y LÍNEA BLANCA" 
@@ -314,4 +366,4 @@
     }
   </script>
 </body>
-</html>        
+</html>
